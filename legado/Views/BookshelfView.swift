@@ -9,14 +9,14 @@ import SwiftUI
 import SFSafeSymbols
 
 struct BookshelfView: View {
-    @StateObject private var dataManager = DataManager.shared
+    @StateObject private var bookManager = BookManager.shared
     @StateObject private var localizationManager = LocalizationManager.shared
     @State private var showingAddBook = false
     
     var body: some View {
         NavigationView {
             VStack {
-                if dataManager.books.isEmpty {
+                if bookManager.items.isEmpty {
                     emptyView
                 } else {
                     bookList
@@ -56,7 +56,7 @@ struct BookshelfView: View {
                 .foregroundColor(.secondary)
             
             Button(.addSampleBooks) {
-                dataManager.addSampleBooks()
+                bookManager.addSampleBooks()
             }
             .buttonStyle(.borderedProminent)
         }
@@ -65,11 +65,13 @@ struct BookshelfView: View {
     
     private var bookList: some View {
         List {
-            ForEach(dataManager.books) { book in
+            ForEach(bookManager.items) { book in
                 BookRowView(book: book)
                     .swipeActions(edge: .trailing) {
                         Button(.delete) {
-                            dataManager.removeBook(book)
+                            Task {
+                                try? await bookManager.removeAsync(book)
+                            }
                         }
                         .tint(.red)
                     }
@@ -93,32 +95,11 @@ struct BookRowView: View {
                     .font(.headline)
                     .lineLimit(1)
                 
-                Text(book.author)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .lineLimit(1)
-                
-                if let lastChapter = book.lastChapter {
-                    Text(lastChapter)
-                        .font(.caption)
+                if let author = book.author {
+                    Text(author)
+                        .font(.subheadline)
                         .foregroundColor(.secondary)
                         .lineLimit(1)
-                }
-            }
-            
-            Spacer()
-            
-            VStack(alignment: .trailing, spacing: 4) {
-                // 显示阅读进度
-                let progress = Double(book.durChapterIndex) / Double(max(book.totalChapterNum, 1))
-                Text("\(Int(progress * 100))%")
-                    .font(.caption)
-                    .foregroundColor(.blue)
-                
-                if let updateTime = book.latestChapterTime {
-                    Text(updateTime, style: .relative)
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
                 }
             }
         }
@@ -128,7 +109,7 @@ struct BookRowView: View {
 
 struct AddBookView: View {
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var dataManager = DataManager.shared
+    @StateObject private var bookManager = BookManager.shared
     
     @State private var bookName = ""
     @State private var bookAuthor = ""
@@ -167,14 +148,16 @@ struct AddBookView: View {
     }
     
     private func saveBook() {
-        var book = Book()
-        book.name = bookName
+        let book = Book(name: bookName)
         book.author = bookAuthor
         book.bookUrl = bookUrl.isEmpty ? "" : bookUrl
-        book.intro = bookIntro.isEmpty ? nil : bookIntro
         
-        dataManager.addBook(book)
-        dismiss()
+        Task {
+            try? await bookManager.addAsync(book)
+            await MainActor.run {
+                dismiss()
+            }
+        }
     }
 }
 

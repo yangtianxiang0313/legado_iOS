@@ -6,73 +6,69 @@
 //
 
 import Foundation
+import WCDBSwift
 
 // MARK: - 书籍模型
-struct Book: Codable, Identifiable {
-    let id = UUID()
-    var name: String                    // 书名
-    var author: String                  // 作者
-    var intro: String?                  // 简介
-    var coverUrl: String?               // 封面URL
-    var bookUrl: String                // 书籍URL
-    var tocUrl: String?                 // 目录URL
-    var lastChapter: String?            // 最新章节
-    var latestChapterTime: Date?        // 最新章节时间
-    var lastCheckTime: Date?            // 最后检查时间
-    var totalChapterNum: Int           // 总章节数
-    var durChapterIndex: Int           // 当前章节索引
-    var durChapterPos: Int             // 当前章节位置
-    var durChapterTime: Date?           // 当前章节时间
-    var durChapterTitle: String?        // 当前章节标题
-    var canUpdate: Bool                // 是否可更新
-    var order: Int                     // 排序
-    var originName: String?             // 书源名称
-    var origin: String?                 // 书源URL
-    var wordCount: String?              // 字数
-    var kind: String?                   // 分类
-    var variable: String?               // 自定义变量
+final class Book: TableModel {
+    static let tableName = "books"
     
-    init() {
-        self.name = ""
-        self.author = ""
-        self.intro = nil
-        self.coverUrl = nil
-        self.bookUrl = ""
-        self.tocUrl = nil
-        self.lastChapter = nil
-        self.latestChapterTime = nil
-        self.lastCheckTime = nil
-        self.totalChapterNum = 0
-        self.durChapterIndex = 0
-        self.durChapterPos = 0
-        self.durChapterTime = nil
-        self.durChapterTitle = nil
-        self.canUpdate = true
-        self.order = 0
-        self.originName = nil
-        self.origin = nil
-        self.wordCount = nil
-        self.kind = nil
-        self.variable = nil
+    var id: String = UUID().uuidString
+    var name: String = ""
+    var author: String?
+    var bookUrl: String?
+    var createdAt: Date = Date()
+    var updatedAt: Date = Date()
+    
+    enum CodingKeys: String, CodingTableKey {
+        typealias Root = Book
+        static let objectRelationalMapping = TableBinding(CodingKeys.self)
+        
+        case id
+        case name
+        case author
+        case bookUrl
+        case createdAt
+        case updatedAt
+    }
+    
+    // 便利初始化器
+    convenience init(name: String, author: String? = nil, bookUrl: String? = nil) {
+        self.init()
+        self.name = name
+        self.author = author
+        self.bookUrl = bookUrl
     }
 }
 
 // MARK: - 章节模型
-struct Chapter: Codable, Identifiable {
-    let id = UUID()
-    var url: String                     // 章节URL
-    var title: String                   // 章节标题
-    var baseUrl: String?                // 基础URL
-    var bookUrl: String                 // 书籍URL
-    var index: Int                      // 章节索引
-    var content: String?                // 章节内容
+final class Chapter: TableModel {
+    static let tableName = "chapters"
     
-    init() {
-        self.url = ""
-        self.title = ""
-        self.baseUrl = nil
-        self.bookUrl = ""
-        self.index = 0
-        self.content = nil
+    var id: String = UUID().uuidString
+    var bookId: String = ""
+    var title: String = ""
+    var url: String?
+    var index: Int = 0
+    var createdAt: Date = Date()
+    
+    enum CodingKeys: String, CodingTableKey {
+        typealias Root = Chapter
+        static let objectRelationalMapping = TableBinding(CodingKeys.self)
+        
+        case id
+        case bookId
+        case title
+        case url
+        case index
+        case createdAt
+    }
+    
+    // 便利初始化器
+    convenience init(bookId: String, title: String, url: String? = nil, index: Int = 0) {
+        self.init()
+        self.bookId = bookId
+        self.title = title
+        self.url = url
+        self.index = index
     }
 }

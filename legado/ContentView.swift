@@ -19,6 +19,12 @@ struct ContentView: View {
                     Text(.tabBookshelf)
                 }
             
+            RuleEngineTestView()
+                .tabItem {
+                    Image(systemSymbol: .testtube2)
+                    Text("测试")
+                }
+            
             SettingsView()
                 .tabItem {
                     Image(systemSymbol: .gearshape)

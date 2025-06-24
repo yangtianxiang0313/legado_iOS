@@ -7,8 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96267CB42E0A7033003371E9 /* WCDBSwiftDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 96CB14212E0A6ADF0098115B /* WCDBSwiftDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		96267DC72E0AE2B4003371E9 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 96267DC62E0AE2B4003371E9 /* SwiftSoup */; };
+		96267DCA2E0AE2E5003371E9 /* Fuzi in Frameworks */ = {isa = PBXBuildFile; productRef = 96267DC92E0AE2E5003371E9 /* Fuzi */; };
 		96987AC22E091F2000361CD4 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 96987AC12E091F2000361CD4 /* SFSafeSymbols */; };
+		96CB14222E0A6ADF0098115B /* WCDBSwiftDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 96CB14212E0A6ADF0098115B /* WCDBSwiftDynamic */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		96267CB52E0A7033003371E9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				96267CB42E0A7033003371E9 /* WCDBSwiftDynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		96987AAF2E091F1900361CD4 /* legado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = legado.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,7 +45,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96CB14222E0A6ADF0098115B /* WCDBSwiftDynamic in Frameworks */,
 				96987AC22E091F2000361CD4 /* SFSafeSymbols in Frameworks */,
+				96267DCA2E0AE2E5003371E9 /* Fuzi in Frameworks */,
+				96267DC72E0AE2B4003371E9 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +81,7 @@
 				96987AAB2E091F1900361CD4 /* Sources */,
 				96987AAC2E091F1900361CD4 /* Frameworks */,
 				96987AAD2E091F1900361CD4 /* Resources */,
+				96267CB52E0A7033003371E9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -71,6 +93,9 @@
 			name = legado;
 			packageProductDependencies = (
 				96987AC12E091F2000361CD4 /* SFSafeSymbols */,
+				96CB14212E0A6ADF0098115B /* WCDBSwiftDynamic */,
+				96267DC62E0AE2B4003371E9 /* SwiftSoup */,
+				96267DC92E0AE2E5003371E9 /* Fuzi */,
 			);
 			productName = legado;
 			productReference = 96987AAF2E091F1900361CD4 /* legado.app */;
@@ -105,6 +130,9 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				96987AC02E091F2000361CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				96CB141E2E0A6ADF0098115B /* XCRemoteSwiftPackageReference "wcdb" */,
+				96267DC52E0AE2B4003371E9 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				96267DC82E0AE2E5003371E9 /* XCRemoteSwiftPackageReference "Fuzi" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 96987AB02E091F1900361CD4 /* Products */;
@@ -340,6 +368,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		96267DC52E0AE2B4003371E9 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.8;
+			};
+		};
+		96267DC82E0AE2E5003371E9 /* XCRemoteSwiftPackageReference "Fuzi" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cezheng/Fuzi";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
 		96987AC02E091F2000361CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
@@ -348,13 +392,36 @@
 				minimumVersion = 6.2.0;
 			};
 		};
+		96CB141E2E0A6ADF0098115B /* XCRemoteSwiftPackageReference "wcdb" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Tencent/wcdb";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		96267DC62E0AE2B4003371E9 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96267DC52E0AE2B4003371E9 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		96267DC92E0AE2E5003371E9 /* Fuzi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96267DC82E0AE2E5003371E9 /* XCRemoteSwiftPackageReference "Fuzi" */;
+			productName = Fuzi;
+		};
 		96987AC12E091F2000361CD4 /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 96987AC02E091F2000361CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
+		};
+		96CB14212E0A6ADF0098115B /* WCDBSwiftDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96CB141E2E0A6ADF0098115B /* XCRemoteSwiftPackageReference "wcdb" */;
+			productName = WCDBSwiftDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

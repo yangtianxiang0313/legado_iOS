@@ -1,6 +1,15 @@
 {
-  "originHash" : "534acf8afa17bc752e8abec7665ffe97a6867373991672bbd665d7673174b1f0",
+  "originHash" : "d7d416dd5ac8a6b850fda403ae8a7466718163d39d49648fc4e23eb88e67ca09",
   "pins" : [
+    {
+      "identity" : "fuzi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cezheng/Fuzi",
+      "state" : {
+        "revision" : "f08c8323da21e985f3772610753bcfc652c2103f",
+        "version" : "3.1.3"
+      }
+    },
     {
       "identity" : "sfsafesymbols",
       "kind" : "remoteSourceControl",
@@ -8,6 +17,33 @@
       "state" : {
         "revision" : "3dd282d3269b061853a3b3bcd23a509d2aa166ce",
         "version" : "6.2.0"
+      }
+    },
+    {
+      "identity" : "sqlcipher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Tencent/sqlcipher",
+      "state" : {
+        "revision" : "5d8825c22feedb421ad6f9ecfc1399460e10d299",
+        "version" : "1.4.7"
+      }
+    },
+    {
+      "identity" : "swiftsoup",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scinfu/SwiftSoup",
+      "state" : {
+        "revision" : "aa85ee96017a730031bafe411cde24a08a17a9c9",
+        "version" : "2.8.8"
+      }
+    },
+    {
+      "identity" : "wcdb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Tencent/wcdb",
+      "state" : {
+        "revision" : "db68d174876d4c50c9843d0e6e22c58adebf2431",
+        "version" : "2.1.11"
       }
     }
   ],
