@@ -1,0 +1,330 @@
+/* 
+  Localizable.strings (English)
+  legado
+  
+  Created by AI Assistant on 2024/12/19.
+*/
+
+// MARK: - 通用
+"app_name" = "Legado";
+"ok" = "OK";
+"cancel" = "Cancel";
+"confirm" = "Confirm";
+"delete" = "Delete";
+"edit" = "Edit";
+"save" = "Save";
+"loading" = "Loading...";
+"error" = "Error";
+"success" = "Success";
+"warning" = "Warning";
+"info" = "Info";
+"retry" = "Retry";
+"close" = "Close";
+"back" = "Back";
+"next" = "Next";
+"previous" = "Previous";
+"done" = "Done";
+"add" = "Add";
+"remove" = "Remove";
+"search" = "Search";
+"filter" = "Filter";
+"sort" = "Sort";
+"refresh" = "Refresh";
+"share" = "Share";
+"copy" = "Copy";
+"paste" = "Paste";
+"select_all" = "Select All";
+"clear" = "Clear";
+"reset" = "Reset";
+"import" = "Import";
+"export" = "Export";
+"backup" = "Backup";
+"restore" = "Restore";
+"settings" = "Settings";
+"about" = "About";
+"help" = "Help";
+"version" = "Version";
+"update" = "Update";
+"download" = "Download";
+"upload" = "Upload";
+"sync" = "Sync";
+"offline" = "Offline";
+"online" = "Online";
+"connect" = "Connect";
+"disconnect" = "Disconnect";
+"enable" = "Enable";
+"disable" = "Disable";
+"on" = "On";
+"off" = "Off";
+"yes" = "Yes";
+"no" = "No";
+"none" = "None";
+"all" = "All";
+"default" = "Default";
+"custom" = "Custom";
+"auto" = "Auto";
+"manual" = "Manual";
+
+// MARK: - 主界面
+"tab_bookshelf" = "Bookshelf";
+"tab_explore" = "Explore";
+"tab_search" = "Search";
+"tab_settings" = "Settings";
+
+// MARK: - 书架
+"bookshelf_title" = "Bookshelf";
+"bookshelf_empty" = "No books yet";
+"bookshelf_empty_desc" = "Add books from search or explore";
+"add_sample_books" = "Add Sample Books";
+"add_book" = "Add Book";
+"book_name" = "Book Name";
+"book_author" = "Author";
+"book_url" = "Book URL";
+"last_chapter" = "Latest Chapter";
+"reading_progress" = "Reading Progress";
+"update_time" = "Update Time";
+"recent_reading" = "Recent Reading";
+"continue_reading" = "Continue Reading";
+"last_read" = "Last read: %@";
+"reading_progress" = "Progress: %.1f%%";
+"chapter_progress" = "Chapter %d of %d";
+"book_detail" = "Book Details";
+"book_info" = "Book Info";
+"book_chapters" = "Chapters";
+"book_bookmarks" = "Bookmarks";
+"book_notes" = "Notes";
+"add_to_bookshelf" = "Add to Bookshelf";
+"remove_from_bookshelf" = "Remove from Bookshelf";
+"mark_as_read" = "Mark as Read";
+"mark_as_unread" = "Mark as Unread";
+"book_groups" = "Groups";
+"create_group" = "Create Group";
+"group_name" = "Group Name";
+"move_to_group" = "Move to Group";
+"ungrouped" = "Ungrouped";
+
+// MARK: - 搜索
+"search_title" = "Search";
+"search_placeholder" = "Enter book title or author";
+"search_history" = "Search History";
+"search_results" = "Search Results";
+"search_no_results" = "No results found";
+"search_error" = "Search failed";
+"clear_search_history" = "Clear Search History";
+"searching" = "Searching...";
+"search_in_source" = "Search in %@";
+"search_all_sources" = "Search All Sources";
+"author" = "Author";
+"latest_chapter" = "Latest Chapter";
+"word_count" = "Word Count";
+"book_status" = "Status";
+"book_category" = "Category";
+"book_intro" = "Introduction";
+"book_cover" = "Cover";
+
+// MARK: - 发现
+"explore_title" = "Explore";
+"explore_categories" = "Categories";
+"explore_rankings" = "Rankings";
+"explore_recommendations" = "Recommendations";
+"hot_books" = "Hot Books";
+"new_books" = "New Books";
+"completed_books" = "Completed Books";
+"category_all" = "All";
+"category_fantasy" = "Fantasy";
+"category_romance" = "Romance";
+"category_urban" = "Urban";
+"category_history" = "History";
+"category_scifi" = "Sci-Fi";
+"category_game" = "Game";
+"category_sports" = "Sports";
+"category_military" = "Military";
+"category_other" = "Other";
+
+// MARK: - 阅读
+"reading_title" = "Reading";
+"chapter_title" = "Chapter %d";
+"chapter_loading" = "Loading chapter...";
+"chapter_error" = "Failed to load chapter";
+"chapter_empty" = "Chapter is empty";
+"next_chapter" = "Next Chapter";
+"previous_chapter" = "Previous Chapter";
+"chapter_list" = "Chapter List";
+"reading_settings" = "Reading Settings";
+"font_size" = "Font Size";
+"line_spacing" = "Line Spacing";
+"paragraph_spacing" = "Paragraph Spacing";
+"page_margins" = "Page Margins";
+"background_color" = "Background Color";
+"text_color" = "Text Color";
+"font_family" = "Font Family";
+"page_mode" = "Page Mode";
+"scroll_mode" = "Scroll";
+"simulation_mode" = "Simulation";
+"cover_mode" = "Cover";
+"slide_mode" = "Slide";
+"brightness" = "Brightness";
+"auto_scroll" = "Auto Scroll";
+"scroll_speed" = "Scroll Speed";
+"volume_key_turn_page" = "Volume Key Turn Page";
+"click_turn_page" = "Click Turn Page";
+"immersive_mode" = "Immersive Mode";
+"add_bookmark" = "Add Bookmark";
+"add_note" = "Add Note";
+"bookmark_added" = "Bookmark added";
+"note_added" = "Note added";
+"bookmark_content" = "Bookmark Content";
+"note_content" = "Note Content";
+"selected_text" = "Selected Text";
+"bookmark_time" = "Bookmark Time";
+"note_time" = "Note Time";
+
+// MARK: - 书源
+"book_sources" = "Book Sources";
+"source_name" = "Source Name";
+"source_url" = "Source URL";
+"source_group" = "Source Group";
+"source_enabled" = "Enabled";
+"source_explore_enabled" = "Explore Enabled";
+"add_source" = "Add Source";
+"edit_source" = "Edit Source";
+"delete_source" = "Delete Source";
+"import_sources" = "Import Sources";
+"export_sources" = "Export Sources";
+"source_test" = "Test Source";
+"source_test_success" = "Source test successful";
+"source_test_failed" = "Source test failed";
+"source_login" = "Source Login";
+"source_logout" = "Source Logout";
+"source_check_update" = "Check Update";
+"source_update_available" = "Update Available";
+"source_update_success" = "Update Successful";
+"source_update_failed" = "Update Failed";
+"source_rules" = "Source Rules";
+"search_rule" = "Search Rule";
+"book_info_rule" = "Book Info Rule";
+"chapter_rule" = "Chapter Rule";
+"content_rule" = "Content Rule";
+"explore_rule" = "Explore Rule";
+
+// MARK: - 设置
+"settings_title" = "Settings";
+"general_settings" = "General";
+"reading_settings_title" = "Reading";
+"backup_settings" = "Backup";
+"about_settings" = "About";
+"language_setting" = "Language";
+"theme_setting" = "Theme";
+"theme_system" = "Follow System";
+"theme_light" = "Light";
+"theme_dark" = "Dark";
+"theme_auto" = "Auto";
+"language_system" = "Follow System";
+"language_zh_hans" = "简体中文";
+"language_zh_hant" = "繁体中文";
+"language_en" = "English";
+"language_ja" = "日本語";
+"language_ko" = "한국어";
+"auto_backup" = "Auto Backup";
+"backup_interval" = "Backup Interval";
+"backup_location" = "Backup Location";
+"cloud_sync" = "Cloud Sync";
+"wifi_only_sync" = "WiFi Only Sync";
+"auto_update" = "Auto Update";
+"check_update_interval" = "Check Update Interval";
+"cache_settings" = "Cache";
+"cache_size" = "Cache Size";
+"clear_cache" = "Clear Cache";
+"cache_cleared" = "Cache cleared";
+"download_settings" = "Download";
+"download_path" = "Download Path";
+"max_concurrent_downloads" = "Max Concurrent Downloads";
+"network_settings" = "Network";
+"request_timeout" = "Request Timeout";
+"retry_count" = "Retry Count";
+"user_agent" = "User Agent";
+"privacy_settings" = "Privacy";
+"data_collection" = "Data Collection";
+"crash_reporting" = "Crash Reporting";
+"analytics" = "Analytics";
+
+// MARK: - 备份与恢复
+"backup_title" = "Backup & Restore";
+"create_backup" = "Create Backup";
+"restore_backup" = "Restore Backup";
+"backup_created" = "Backup created successfully";
+"backup_failed" = "Backup failed";
+"restore_success" = "Restore successful";
+"restore_failed" = "Restore failed";
+"backup_file" = "Backup File";
+"backup_time" = "Backup Time";
+"backup_size" = "Backup Size";
+"backup_content" = "Backup Content";
+"include_books" = "Include Books";
+"include_sources" = "Include Sources";
+"include_settings" = "Include Settings";
+"include_bookmarks" = "Include Bookmarks";
+"include_notes" = "Include Notes";
+"backup_encryption" = "Backup Encryption";
+"backup_password" = "Backup Password";
+"confirm_password" = "Confirm Password";
+"password_mismatch" = "Passwords do not match";
+"auto_backup_enabled" = "Auto backup enabled";
+"auto_backup_disabled" = "Auto backup disabled";
+"backup_interval_daily" = "Daily";
+"backup_interval_weekly" = "Weekly";
+"backup_interval_monthly" = "Monthly";
+
+// MARK: - 错误信息
+"error_network" = "Network error";
+"error_timeout" = "Request timeout";
+"error_server" = "Server error";
+"error_parse" = "Parse error";
+"error_file_not_found" = "File not found";
+"error_permission_denied" = "Permission denied";
+"error_disk_full" = "Disk full";
+"error_invalid_url" = "Invalid URL";
+"error_invalid_format" = "Invalid format";
+"error_unknown" = "Unknown error";
+
+// MARK: - 成功信息
+"success_saved" = "Saved successfully";
+"success_deleted" = "Deleted successfully";
+"success_imported" = "Imported successfully";
+"success_exported" = "Exported successfully";
+"success_synced" = "Synced successfully";
+"success_updated" = "Updated successfully";
+"success_book_added" = "Book added successfully";
+"success_book_deleted" = "Book deleted successfully";
+"success_settings_saved" = "Settings saved successfully";
+"success_data_exported" = "Data exported successfully";
+"success_data_imported" = "Data imported successfully";
+
+// MARK: - 确认对话框
+"confirm_delete" = "Are you sure you want to delete?";
+"confirm_clear" = "Are you sure you want to clear?";
+"confirm_reset" = "Are you sure you want to reset?";
+"confirm_logout" = "Are you sure you want to logout?";
+"confirm_exit" = "Are you sure you want to exit?";
+
+// MARK: - 时间格式
+"time_just_now" = "Just now";
+"time_minutes_ago" = "%d minutes ago";
+"time_hours_ago" = "%d hours ago";
+"time_days_ago" = "%d days ago";
+"time_weeks_ago" = "%d weeks ago";
+"time_months_ago" = "%d months ago";
+"time_years_ago" = "%d years ago";
+
+// MARK: - 单位
+"unit_bytes" = "B";
+"unit_kb" = "KB";
+"unit_mb" = "MB";
+"unit_gb" = "GB";
+"unit_seconds" = "seconds";
+"unit_minutes" = "minutes";
+"unit_hours" = "hours";
+"unit_days" = "days";
+"unit_weeks" = "weeks";
+"unit_months" = "months";
+"unit_years" = "years";

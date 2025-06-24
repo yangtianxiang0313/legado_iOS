@@ -2,20 +2,30 @@
 //  ContentView.swift
 //  legado
 //
-//  Created by 杨天翔 on 23/6/25.
+//  Created by AI Assistant on 2024/12/19.
 //
 
 import SwiftUI
+import SFSafeSymbols
 
 struct ContentView: View {
+    @StateObject private var localizationManager = LocalizationManager.shared
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            BookshelfView()
+                .tabItem {
+                    Image(systemSymbol: .booksVertical)
+                    Text(.tabBookshelf)
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Image(systemSymbol: .gearshape)
+                    Text(.tabSettings)
+                }
         }
-        .padding()
+        .environmentObject(localizationManager)
     }
 }
 

@@ -1,0 +1,330 @@
+/* 
+  Localizable.strings (Traditional Chinese)
+  legado
+  
+  Created by AI Assistant on 2024/12/19.
+*/
+
+// MARK: - 通用
+"app_name" = "閱讀";
+"ok" = "確定";
+"cancel" = "取消";
+"confirm" = "確認";
+"delete" = "刪除";
+"edit" = "編輯";
+"save" = "儲存";
+"loading" = "載入中...";
+"error" = "錯誤";
+"success" = "成功";
+"warning" = "警告";
+"info" = "資訊";
+"retry" = "重試";
+"close" = "關閉";
+"back" = "返回";
+"next" = "下一個";
+"previous" = "上一個";
+"done" = "完成";
+"add" = "新增";
+"remove" = "移除";
+"search" = "搜尋";
+"filter" = "篩選";
+"sort" = "排序";
+"refresh" = "重新整理";
+"share" = "分享";
+"copy" = "複製";
+"paste" = "貼上";
+"select_all" = "全選";
+"clear" = "清空";
+"reset" = "重設";
+"import" = "匯入";
+"export" = "匯出";
+"backup" = "備份";
+"restore" = "還原";
+"settings" = "設定";
+"about" = "關於";
+"help" = "說明";
+"version" = "版本";
+"update" = "更新";
+"download" = "下載";
+"upload" = "上傳";
+"sync" = "同步";
+"offline" = "離線";
+"online" = "線上";
+"connect" = "連接";
+"disconnect" = "中斷連接";
+"enable" = "啟用";
+"disable" = "停用";
+"on" = "開";
+"off" = "關";
+"yes" = "是";
+"no" = "否";
+"none" = "無";
+"all" = "全部";
+"default" = "預設";
+"custom" = "自訂";
+"auto" = "自動";
+"manual" = "手動";
+
+// MARK: - 主界面
+"tab_bookshelf" = "書架";
+"tab_explore" = "發現";
+"tab_search" = "搜尋";
+"tab_settings" = "設定";
+
+// MARK: - 書架
+"bookshelf_title" = "書架";
+"bookshelf_empty" = "暫無書籍";
+"bookshelf_empty_desc" = "從搜尋或發現中新增書籍";
+"add_sample_books" = "新增範例書籍";
+"add_book" = "新增書籍";
+"book_name" = "書名";
+"book_author" = "作者";
+"book_url" = "書籍網址";
+"last_chapter" = "最新章節";
+"reading_progress" = "閱讀進度";
+"update_time" = "更新時間";
+"recent_reading" = "最近閱讀";
+"continue_reading" = "繼續閱讀";
+"last_read" = "上次閱讀：%@";
+"reading_progress" = "進度：%.1f%%";
+"chapter_progress" = "第%d章 共%d章";
+"book_detail" = "書籍詳情";
+"book_info" = "書籍資訊";
+"book_chapters" = "章節目錄";
+"book_bookmarks" = "書籤";
+"book_notes" = "筆記";
+"add_to_bookshelf" = "加入書架";
+"remove_from_bookshelf" = "移出書架";
+"mark_as_read" = "標記已讀";
+"mark_as_unread" = "標記未讀";
+"book_groups" = "分組";
+"create_group" = "建立分組";
+"group_name" = "分組名稱";
+"move_to_group" = "移動到分組";
+"ungrouped" = "未分組";
+
+// MARK: - 搜尋
+"search_title" = "搜尋";
+"search_placeholder" = "輸入書名或作者";
+"search_history" = "搜尋記錄";
+"search_results" = "搜尋結果";
+"search_no_results" = "未找到相關結果";
+"search_error" = "搜尋失敗";
+"clear_search_history" = "清空搜尋記錄";
+"searching" = "搜尋中...";
+"search_in_source" = "在%@中搜尋";
+"search_all_sources" = "搜尋全部書源";
+"author" = "作者";
+"latest_chapter" = "最新章節";
+"word_count" = "字數";
+"book_status" = "狀態";
+"book_category" = "分類";
+"book_intro" = "簡介";
+"book_cover" = "封面";
+
+// MARK: - 發現
+"explore_title" = "發現";
+"explore_categories" = "分類";
+"explore_rankings" = "排行榜";
+"explore_recommendations" = "推薦";
+"hot_books" = "熱門書籍";
+"new_books" = "新書推薦";
+"completed_books" = "完本精品";
+"category_all" = "全部";
+"category_fantasy" = "玄幻";
+"category_romance" = "言情";
+"category_urban" = "都市";
+"category_history" = "歷史";
+"category_scifi" = "科幻";
+"category_game" = "遊戲";
+"category_sports" = "體育";
+"category_military" = "軍事";
+"category_other" = "其他";
+
+// MARK: - 閱讀
+"reading_title" = "閱讀";
+"chapter_title" = "第%d章";
+"chapter_loading" = "章節載入中...";
+"chapter_error" = "章節載入失敗";
+"chapter_empty" = "章節內容為空";
+"next_chapter" = "下一章";
+"previous_chapter" = "上一章";
+"chapter_list" = "章節目錄";
+"reading_settings" = "閱讀設定";
+"font_size" = "字體大小";
+"line_spacing" = "行距";
+"paragraph_spacing" = "段落間距";
+"page_margins" = "頁邊距";
+"background_color" = "背景顏色";
+"text_color" = "文字顏色";
+"font_family" = "字體";
+"page_mode" = "翻頁模式";
+"scroll_mode" = "滾動";
+"simulation_mode" = "仿真";
+"cover_mode" = "覆蓋";
+"slide_mode" = "滑動";
+"brightness" = "亮度";
+"auto_scroll" = "自動滾動";
+"scroll_speed" = "滾動速度";
+"volume_key_turn_page" = "音量鍵翻頁";
+"click_turn_page" = "點擊翻頁";
+"immersive_mode" = "沉浸模式";
+"add_bookmark" = "新增書籤";
+"add_note" = "新增筆記";
+"bookmark_added" = "書籤已新增";
+"note_added" = "筆記已新增";
+"bookmark_content" = "書籤內容";
+"note_content" = "筆記內容";
+"selected_text" = "選中文字";
+"bookmark_time" = "書籤時間";
+"note_time" = "筆記時間";
+
+// MARK: - 書源
+"book_sources" = "書源";
+"source_name" = "書源名稱";
+"source_url" = "書源地址";
+"source_group" = "書源分組";
+"source_enabled" = "啟用";
+"source_explore_enabled" = "啟用發現";
+"add_source" = "新增書源";
+"edit_source" = "編輯書源";
+"delete_source" = "刪除書源";
+"import_sources" = "匯入書源";
+"export_sources" = "匯出書源";
+"source_test" = "測試書源";
+"source_test_success" = "書源測試成功";
+"source_test_failed" = "書源測試失敗";
+"source_login" = "書源登入";
+"source_logout" = "書源登出";
+"source_check_update" = "檢查更新";
+"source_update_available" = "有可用更新";
+"source_update_success" = "更新成功";
+"source_update_failed" = "更新失敗";
+"source_rules" = "書源規則";
+"search_rule" = "搜尋規則";
+"book_info_rule" = "書籍資訊規則";
+"chapter_rule" = "章節規則";
+"content_rule" = "正文規則";
+"explore_rule" = "發現規則";
+
+// MARK: - 設定
+"settings_title" = "設定";
+"general_settings" = "一般";
+"reading_settings_title" = "閱讀";
+"backup_settings" = "備份";
+"about_settings" = "關於";
+"language_setting" = "語言";
+"theme_setting" = "主題";
+"theme_system" = "跟隨系統";
+"theme_light" = "淺色";
+"theme_dark" = "深色";
+"theme_auto" = "自動";
+"language_system" = "跟隨系統";
+"language_zh_hans" = "简体中文";
+"language_zh_hant" = "繁体中文";
+"language_en" = "English";
+"language_ja" = "日本語";
+"language_ko" = "한국어";
+"auto_backup" = "自動備份";
+"backup_interval" = "備份間隔";
+"backup_location" = "備份位置";
+"cloud_sync" = "雲端同步";
+"wifi_only_sync" = "僅WiFi同步";
+"auto_update" = "自動更新";
+"check_update_interval" = "檢查更新間隔";
+"cache_settings" = "快取";
+"cache_size" = "快取大小";
+"clear_cache" = "清空快取";
+"cache_cleared" = "快取已清空";
+"download_settings" = "下載";
+"download_path" = "下載路徑";
+"max_concurrent_downloads" = "最大並發下載數";
+"network_settings" = "網路";
+"request_timeout" = "請求逾時";
+"retry_count" = "重試次數";
+"user_agent" = "使用者代理";
+"privacy_settings" = "隱私";
+"data_collection" = "資料收集";
+"crash_reporting" = "當機報告";
+"analytics" = "分析";
+
+// MARK: - 備份與還原
+"backup_title" = "備份與還原";
+"create_backup" = "建立備份";
+"restore_backup" = "還原備份";
+"backup_created" = "備份建立成功";
+"backup_failed" = "備份失敗";
+"restore_success" = "還原成功";
+"restore_failed" = "還原失敗";
+"backup_file" = "備份檔案";
+"backup_time" = "備份時間";
+"backup_size" = "備份大小";
+"backup_content" = "備份內容";
+"include_books" = "包含書籍";
+"include_sources" = "包含書源";
+"include_settings" = "包含設定";
+"include_bookmarks" = "包含書籤";
+"include_notes" = "包含筆記";
+"backup_encryption" = "備份加密";
+"backup_password" = "備份密碼";
+"confirm_password" = "確認密碼";
+"password_mismatch" = "密碼不符";
+"auto_backup_enabled" = "自動備份已啟用";
+"auto_backup_disabled" = "自動備份已停用";
+"backup_interval_daily" = "每日";
+"backup_interval_weekly" = "每週";
+"backup_interval_monthly" = "每月";
+
+// MARK: - 錯誤訊息
+"error_network" = "網路錯誤";
+"error_timeout" = "請求逾時";
+"error_server" = "伺服器錯誤";
+"error_parse" = "解析錯誤";
+"error_file_not_found" = "檔案未找到";
+"error_permission_denied" = "權限不足";
+"error_disk_full" = "磁碟空間不足";
+"error_invalid_url" = "無效的URL";
+"error_invalid_format" = "無效的格式";
+"error_unknown" = "未知錯誤";
+
+// MARK: - 成功訊息
+"success_saved" = "儲存成功";
+"success_deleted" = "刪除成功";
+"success_imported" = "匯入成功";
+"success_exported" = "匯出成功";
+"success_synced" = "同步成功";
+"success_updated" = "更新成功";
+"success_book_added" = "書籍新增成功";
+"success_book_deleted" = "書籍刪除成功";
+"success_settings_saved" = "設定儲存成功";
+"success_data_exported" = "資料匯出成功";
+"success_data_imported" = "資料匯入成功";
+
+// MARK: - 確認對話框
+"confirm_delete" = "確定要刪除嗎？";
+"confirm_clear" = "確定要清空嗎？";
+"confirm_reset" = "確定要重設嗎？";
+"confirm_logout" = "確定要登出嗎？";
+"confirm_exit" = "確定要退出嗎？";
+
+// MARK: - 時間格式
+"time_just_now" = "剛剛";
+"time_minutes_ago" = "%d分鐘前";
+"time_hours_ago" = "%d小時前";
+"time_days_ago" = "%d天前";
+"time_weeks_ago" = "%d週前";
+"time_months_ago" = "%d個月前";
+"time_years_ago" = "%d年前";
+
+// MARK: - 單位
+"unit_bytes" = "位元組";
+"unit_kb" = "KB";
+"unit_mb" = "MB";
+"unit_gb" = "GB";
+"unit_seconds" = "秒";
+"unit_minutes" = "分鐘";
+"unit_hours" = "小時";
+"unit_days" = "天";
+"unit_weeks" = "週";
+"unit_months" = "月";
+"unit_years" = "年";

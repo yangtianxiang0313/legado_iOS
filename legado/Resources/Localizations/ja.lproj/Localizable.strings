@@ -1,0 +1,330 @@
+/* 
+  Localizable.strings (Japanese)
+  legado
+  
+  Created by AI Assistant on 2024/12/19.
+*/
+
+// MARK: - 一般
+"app_name" = "読書";
+"ok" = "OK";
+"cancel" = "キャンセル";
+"confirm" = "確認";
+"delete" = "削除";
+"edit" = "編集";
+"save" = "保存";
+"loading" = "読み込み中...";
+"error" = "エラー";
+"success" = "成功";
+"warning" = "警告";
+"info" = "情報";
+"retry" = "再試行";
+"close" = "閉じる";
+"back" = "戻る";
+"next" = "次へ";
+"previous" = "前へ";
+"done" = "完了";
+"add" = "追加";
+"remove" = "削除";
+"search" = "検索";
+"filter" = "フィルター";
+"sort" = "並び替え";
+"refresh" = "更新";
+"share" = "共有";
+"copy" = "コピー";
+"paste" = "貼り付け";
+"select_all" = "すべて選択";
+"clear" = "クリア";
+"reset" = "リセット";
+"import" = "インポート";
+"export" = "エクスポート";
+"backup" = "バックアップ";
+"restore" = "復元";
+"settings" = "設定";
+"about" = "について";
+"help" = "ヘルプ";
+"version" = "バージョン";
+"update" = "更新";
+"download" = "ダウンロード";
+"upload" = "アップロード";
+"sync" = "同期";
+"offline" = "オフライン";
+"online" = "オンライン";
+"connect" = "接続";
+"disconnect" = "切断";
+"enable" = "有効";
+"disable" = "無効";
+"on" = "オン";
+"off" = "オフ";
+"yes" = "はい";
+"no" = "いいえ";
+"none" = "なし";
+"all" = "すべて";
+"default" = "デフォルト";
+"custom" = "カスタム";
+"auto" = "自動";
+"manual" = "手動";
+
+// MARK: - メイン画面
+"tab_bookshelf" = "本棚";
+"tab_explore" = "発見";
+"tab_search" = "検索";
+"tab_settings" = "設定";
+
+// MARK: - 本棚
+"bookshelf_title" = "本棚";
+"bookshelf_empty" = "本がありません";
+"bookshelf_empty_desc" = "検索または発見から本を追加してください";
+"add_sample_books" = "サンプル本を追加";
+"add_book" = "本を追加";
+"book_name" = "本の名前";
+"book_author" = "著者";
+"book_url" = "本のURL";
+"last_chapter" = "最新章";
+"reading_progress" = "読書進度";
+"update_time" = "更新時間";
+"recent_reading" = "最近読んだ本";
+"continue_reading" = "読書を続ける";
+"last_read" = "最後に読んだ時間：%@";
+"reading_progress" = "進度：%.1f%%";
+"chapter_progress" = "第%d章 全%d章";
+"book_detail" = "本の詳細";
+"book_info" = "本の情報";
+"book_chapters" = "章一覧";
+"book_bookmarks" = "ブックマーク";
+"book_notes" = "ノート";
+"add_to_bookshelf" = "本棚に追加";
+"remove_from_bookshelf" = "本棚から削除";
+"mark_as_read" = "既読にする";
+"mark_as_unread" = "未読にする";
+"book_groups" = "グループ";
+"create_group" = "グループを作成";
+"group_name" = "グループ名";
+"move_to_group" = "グループに移動";
+"ungrouped" = "未分類";
+
+// MARK: - 検索
+"search_title" = "検索";
+"search_placeholder" = "本のタイトルまたは著者を入力";
+"search_history" = "検索履歴";
+"search_results" = "検索結果";
+"search_no_results" = "関連する結果が見つかりません";
+"search_error" = "検索に失敗しました";
+"clear_search_history" = "検索履歴をクリア";
+"searching" = "検索中...";
+"search_in_source" = "%@で検索";
+"search_all_sources" = "すべてのソースで検索";
+"author" = "著者";
+"latest_chapter" = "最新章";
+"word_count" = "文字数";
+"book_status" = "状態";
+"book_category" = "カテゴリー";
+"book_intro" = "紹介";
+"book_cover" = "表紙";
+
+// MARK: - 発見
+"explore_title" = "発見";
+"explore_categories" = "カテゴリー";
+"explore_rankings" = "ランキング";
+"explore_recommendations" = "おすすめ";
+"hot_books" = "人気の本";
+"new_books" = "新刊おすすめ";
+"completed_books" = "完結作品";
+"category_all" = "すべて";
+"category_fantasy" = "ファンタジー";
+"category_romance" = "恋愛";
+"category_urban" = "都市";
+"category_history" = "歴史";
+"category_scifi" = "SF";
+"category_game" = "ゲーム";
+"category_sports" = "スポーツ";
+"category_military" = "軍事";
+"category_other" = "その他";
+
+// MARK: - 読書
+"reading_title" = "読書";
+"chapter_title" = "第%d章";
+"chapter_loading" = "章を読み込み中...";
+"chapter_error" = "章の読み込みに失敗しました";
+"chapter_empty" = "章の内容が空です";
+"next_chapter" = "次の章";
+"previous_chapter" = "前の章";
+"chapter_list" = "章一覧";
+"reading_settings" = "読書設定";
+"font_size" = "フォントサイズ";
+"line_spacing" = "行間";
+"paragraph_spacing" = "段落間隔";
+"page_margins" = "ページ余白";
+"background_color" = "背景色";
+"text_color" = "文字色";
+"font_family" = "フォント";
+"page_mode" = "ページめくりモード";
+"scroll_mode" = "スクロール";
+"simulation_mode" = "シミュレーション";
+"cover_mode" = "カバー";
+"slide_mode" = "スライド";
+"brightness" = "明度";
+"auto_scroll" = "自動スクロール";
+"scroll_speed" = "スクロール速度";
+"volume_key_turn_page" = "音量キーでページめくり";
+"click_turn_page" = "タップでページめくり";
+"immersive_mode" = "没入モード";
+"add_bookmark" = "ブックマークを追加";
+"add_note" = "ノートを追加";
+"bookmark_added" = "ブックマークが追加されました";
+"note_added" = "ノートが追加されました";
+"bookmark_content" = "ブックマーク内容";
+"note_content" = "ノート内容";
+"selected_text" = "選択されたテキスト";
+"bookmark_time" = "ブックマーク時間";
+"note_time" = "ノート時間";
+
+// MARK: - ブックソース
+"book_sources" = "ブックソース";
+"source_name" = "ソース名";
+"source_url" = "ソースURL";
+"source_group" = "ソースグループ";
+"source_enabled" = "有効";
+"source_explore_enabled" = "発見を有効にする";
+"add_source" = "ソースを追加";
+"edit_source" = "ソースを編集";
+"delete_source" = "ソースを削除";
+"import_sources" = "ソースをインポート";
+"export_sources" = "ソースをエクスポート";
+"source_test" = "ソーステスト";
+"source_test_success" = "ソーステストが成功しました";
+"source_test_failed" = "ソーステストが失敗しました";
+"source_login" = "ソースログイン";
+"source_logout" = "ソースログアウト";
+"source_check_update" = "更新を確認";
+"source_update_available" = "利用可能な更新があります";
+"source_update_success" = "更新が成功しました";
+"source_update_failed" = "更新が失敗しました";
+"source_rules" = "ソースルール";
+"search_rule" = "検索ルール";
+"book_info_rule" = "本情報ルール";
+"chapter_rule" = "章ルール";
+"content_rule" = "内容ルール";
+"explore_rule" = "発見ルール";
+
+// MARK: - 設定
+"settings_title" = "設定";
+"general_settings" = "一般";
+"reading_settings_title" = "読書";
+"backup_settings" = "バックアップ";
+"about_settings" = "について";
+"language_setting" = "言語";
+"theme_setting" = "テーマ";
+"theme_system" = "システムに従う";
+"theme_light" = "ライト";
+"theme_dark" = "ダーク";
+"theme_auto" = "自動";
+"language_system" = "システムに従う";
+"language_zh_hans" = "简体中文";
+"language_zh_hant" = "繁体中文";
+"language_en" = "English";
+"language_ja" = "日本語";
+"language_ko" = "한국어";
+"auto_backup" = "自動バックアップ";
+"backup_interval" = "バックアップ間隔";
+"backup_location" = "バックアップ場所";
+"cloud_sync" = "クラウド同期";
+"wifi_only_sync" = "WiFiのみ同期";
+"auto_update" = "自動更新";
+"check_update_interval" = "更新確認間隔";
+"cache_settings" = "キャッシュ";
+"cache_size" = "キャッシュサイズ";
+"clear_cache" = "キャッシュをクリア";
+"cache_cleared" = "キャッシュがクリアされました";
+"download_settings" = "ダウンロード";
+"download_path" = "ダウンロードパス";
+"max_concurrent_downloads" = "最大同時ダウンロード数";
+"network_settings" = "ネットワーク";
+"request_timeout" = "リクエストタイムアウト";
+"retry_count" = "再試行回数";
+"user_agent" = "ユーザーエージェント";
+"privacy_settings" = "プライバシー";
+"data_collection" = "データ収集";
+"crash_reporting" = "クラッシュレポート";
+"analytics" = "分析";
+
+// MARK: - バックアップと復元
+"backup_title" = "バックアップと復元";
+"create_backup" = "バックアップを作成";
+"restore_backup" = "バックアップを復元";
+"backup_created" = "バックアップが作成されました";
+"backup_failed" = "バックアップが失敗しました";
+"restore_success" = "復元が成功しました";
+"restore_failed" = "復元が失敗しました";
+"backup_file" = "バックアップファイル";
+"backup_time" = "バックアップ時間";
+"backup_size" = "バックアップサイズ";
+"backup_content" = "バックアップ内容";
+"include_books" = "本を含む";
+"include_sources" = "ソースを含む";
+"include_settings" = "設定を含む";
+"include_bookmarks" = "ブックマークを含む";
+"include_notes" = "ノートを含む";
+"backup_encryption" = "バックアップ暗号化";
+"backup_password" = "バックアップパスワード";
+"confirm_password" = "パスワードを確認";
+"password_mismatch" = "パスワードが一致しません";
+"auto_backup_enabled" = "自動バックアップが有効になりました";
+"auto_backup_disabled" = "自動バックアップが無効になりました";
+"backup_interval_daily" = "毎日";
+"backup_interval_weekly" = "毎週";
+"backup_interval_monthly" = "毎月";
+
+// MARK: - エラーメッセージ
+"error_network" = "ネットワークエラー";
+"error_timeout" = "リクエストタイムアウト";
+"error_server" = "サーバーエラー";
+"error_parse" = "解析エラー";
+"error_file_not_found" = "ファイルが見つかりません";
+"error_permission_denied" = "権限が不足しています";
+"error_disk_full" = "ディスク容量が不足しています";
+"error_invalid_url" = "無効なURL";
+"error_invalid_format" = "無効な形式";
+"error_unknown" = "不明なエラー";
+
+// MARK: - 成功メッセージ
+"success_saved" = "保存が成功しました";
+"success_deleted" = "削除が成功しました";
+"success_imported" = "インポートが成功しました";
+"success_exported" = "エクスポートが成功しました";
+"success_synced" = "同期が成功しました";
+"success_updated" = "更新が成功しました";
+"success_book_added" = "本の追加が成功しました";
+"success_book_deleted" = "本の削除が成功しました";
+"success_settings_saved" = "設定の保存が成功しました";
+"success_data_exported" = "データのエクスポートが成功しました";
+"success_data_imported" = "データのインポートが成功しました";
+
+// MARK: - 確認ダイアログ
+"confirm_delete" = "削除してもよろしいですか？";
+"confirm_clear" = "クリアしてもよろしいですか？";
+"confirm_reset" = "リセットしてもよろしいですか？";
+"confirm_logout" = "ログアウトしてもよろしいですか？";
+"confirm_exit" = "終了してもよろしいですか？";
+
+// MARK: - 時間形式
+"time_just_now" = "たった今";
+"time_minutes_ago" = "%d分前";
+"time_hours_ago" = "%d時間前";
+"time_days_ago" = "%d日前";
+"time_weeks_ago" = "%d週間前";
+"time_months_ago" = "%dヶ月前";
+"time_years_ago" = "%d年前";
+
+// MARK: - 単位
+"unit_bytes" = "バイト";
+"unit_kb" = "KB";
+"unit_mb" = "MB";
+"unit_gb" = "GB";
+"unit_seconds" = "秒";
+"unit_minutes" = "分";
+"unit_hours" = "時間";
+"unit_days" = "日";
+"unit_weeks" = "週";
+"unit_months" = "月";
+"unit_years" = "年";

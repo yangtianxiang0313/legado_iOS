@@ -1,0 +1,345 @@
+/* 
+  Localizable.strings (Simplified Chinese)
+  legado
+  
+  Created by AI Assistant on 2024/12/19.
+*/
+
+// MARK: - 通用
+"app_name" = "阅读";
+"ok" = "确定";
+"cancel" = "取消";
+"confirm" = "确认";
+"delete" = "删除";
+"edit" = "编辑";
+"save" = "保存";
+"loading" = "加载中...";
+"error" = "错误";
+"success" = "成功";
+"warning" = "警告";
+"info" = "信息";
+"retry" = "重试";
+"close" = "关闭";
+"back" = "返回";
+"next" = "下一个";
+"previous" = "上一个";
+"done" = "完成";
+"add" = "添加";
+"remove" = "移除";
+"search" = "搜索";
+"filter" = "筛选";
+"sort" = "排序";
+"refresh" = "刷新";
+"share" = "分享";
+"copy" = "复制";
+"paste" = "粘贴";
+"select_all" = "全选";
+"clear" = "清空";
+"reset" = "重置";
+"import" = "导入";
+"export" = "导出";
+"backup" = "备份";
+"restore" = "恢复";
+"settings" = "设置";
+"about" = "关于";
+"help" = "帮助";
+"version" = "版本";
+"update" = "更新";
+"download" = "下载";
+"upload" = "上传";
+"sync" = "同步";
+"offline" = "离线";
+"online" = "在线";
+"connect" = "连接";
+"disconnect" = "断开";
+"enable" = "启用";
+"disable" = "禁用";
+"on" = "开";
+"off" = "关";
+"yes" = "是";
+"no" = "否";
+"none" = "无";
+"all" = "全部";
+"default" = "默认";
+"custom" = "自定义";
+"auto" = "自动";
+"manual" = "手动";
+
+// MARK: - 主界面
+"tab_bookshelf" = "书架";
+"tab_explore" = "发现";
+"tab_search" = "搜索";
+"tab_settings" = "设置";
+
+// MARK: - 书架
+"bookshelf_title" = "书架";
+"bookshelf_empty" = "暂无书籍";
+"bookshelf_empty_desc" = "从搜索或发现中添加书籍";
+"add_sample_books" = "添加示例书籍";
+"add_book" = "添加书籍";
+"book_name" = "书名";
+"book_author" = "作者";
+"book_url" = "书籍链接";
+"last_chapter" = "最新章节";
+"reading_progress" = "阅读进度";
+"update_time" = "更新时间";
+"recent_reading" = "最近阅读";
+"continue_reading" = "继续阅读";
+"last_read" = "上次阅读：%@";
+"reading_progress" = "进度：%.1f%%";
+"chapter_progress" = "第%d章 共%d章";
+"book_detail" = "书籍详情";
+"book_info" = "书籍信息";
+"book_chapters" = "章节目录";
+"book_bookmarks" = "书签";
+"book_notes" = "笔记";
+"add_to_bookshelf" = "加入书架";
+"remove_from_bookshelf" = "移出书架";
+"mark_as_read" = "标记已读";
+"mark_as_unread" = "标记未读";
+"book_groups" = "分组";
+"create_group" = "创建分组";
+"group_name" = "分组名称";
+"move_to_group" = "移动到分组";
+"ungrouped" = "未分组";
+
+// MARK: - 搜索
+"search_title" = "搜索";
+"search_placeholder" = "输入书名或作者";
+"search_history" = "搜索历史";
+"search_results" = "搜索结果";
+"search_result" = "搜索结果";
+"search_no_results" = "未找到相关结果";
+"no_result" = "无结果";
+"search_error" = "搜索失败";
+"clear_search_history" = "清空搜索历史";
+"searching" = "搜索中...";
+"search_in_source" = "在%@中搜索";
+"search_all_sources" = "搜索全部书源";
+"author" = "作者";
+"latest_chapter" = "最新章节";
+"word_count" = "字数";
+"book_status" = "状态";
+"book_category" = "分类";
+"book_intro" = "简介";
+"book_cover" = "封面";
+
+// MARK: - 发现
+"explore_title" = "发现";
+"explore_categories" = "分类";
+"explore_rankings" = "排行榜";
+"explore_recommendations" = "推荐";
+"hot_books" = "热门书籍";
+"new_books" = "新书推荐";
+"completed_books" = "完本精品";
+"category_all" = "全部";
+"category_fantasy" = "玄幻";
+"category_romance" = "言情";
+"category_urban" = "都市";
+"category_history" = "历史";
+"category_scifi" = "科幻";
+"category_game" = "游戏";
+"category_sports" = "体育";
+"category_military" = "军事";
+"category_other" = "其他";
+
+// MARK: - 阅读
+"reading_title" = "阅读";
+"chapter_title" = "第%d章";
+"chapter_loading" = "章节加载中...";
+"chapter_error" = "章节加载失败";
+"chapter_empty" = "章节内容为空";
+"next_chapter" = "下一章";
+"previous_chapter" = "上一章";
+"chapter_list" = "章节目录";
+"reading_settings" = "阅读设置";
+"reading_title" = "阅读";
+"line_height" = "行高";
+"page_margin" = "页边距";
+"night_mode" = "夜间模式";
+"full_screen" = "全屏模式";
+"font_size" = "字体大小";
+"line_spacing" = "行间距";
+"paragraph_spacing" = "段落间距";
+"page_margins" = "页边距";
+"background_color" = "背景颜色";
+"text_color" = "文字颜色";
+"font_family" = "字体";
+"page_mode" = "翻页模式";
+"scroll_mode" = "滚动";
+"simulation_mode" = "仿真";
+"cover_mode" = "覆盖";
+"slide_mode" = "滑动";
+"brightness" = "亮度";
+"auto_scroll" = "自动滚动";
+"scroll_speed" = "滚动速度";
+"volume_key_turn_page" = "音量键翻页";
+"click_turn_page" = "点击翻页";
+"immersive_mode" = "沉浸模式";
+"add_bookmark" = "添加书签";
+"add_note" = "添加笔记";
+"bookmark_added" = "书签已添加";
+"note_added" = "笔记已添加";
+"bookmark_content" = "书签内容";
+"note_content" = "笔记内容";
+"selected_text" = "选中文本";
+"bookmark_time" = "书签时间";
+"note_time" = "笔记时间";
+
+// MARK: - 书源
+"book_sources" = "书源";
+"source_name" = "书源名称";
+"source_url" = "书源地址";
+"source_group" = "书源分组";
+"source_enabled" = "启用";
+"source_explore_enabled" = "启用发现";
+"add_source" = "添加书源";
+"edit_source" = "编辑书源";
+"delete_source" = "删除书源";
+"import_sources" = "导入书源";
+"export_sources" = "导出书源";
+"source_test" = "测试书源";
+"source_test_success" = "书源测试成功";
+"source_test_failed" = "书源测试失败";
+"source_login" = "书源登录";
+"source_logout" = "书源登出";
+"source_check_update" = "检查更新";
+"source_update_available" = "有可用更新";
+"source_update_success" = "更新成功";
+"source_update_failed" = "更新失败";
+"source_rules" = "书源规则";
+"search_rule" = "搜索规则";
+"book_info_rule" = "书籍信息规则";
+"chapter_rule" = "章节规则";
+"content_rule" = "正文规则";
+"explore_rule" = "发现规则";
+
+// MARK: - 语言选项
+"language" = "语言";
+"language_system" = "跟随系统";
+"language_zh_hans" = "简体中文";
+"language_zh_hant" = "繁体中文";
+"language_en" = "English";
+"language_ja" = "日本語";
+"language_ko" = "한국어";
+
+// MARK: - 主题选项
+"theme" = "主题";
+"theme_light" = "浅色";
+"theme_dark" = "深色";
+"theme_auto" = "自动";
+
+// MARK: - 设置
+"settings_title" = "设置";
+"general_settings" = "通用";
+"reading_settings_title" = "阅读";
+"backup_settings" = "备份";
+"about_settings" = "关于";
+"language_setting" = "语言";
+"theme_setting" = "主题";
+"theme_system" = "跟随系统";
+"theme_light" = "浅色";
+"theme_dark" = "深色";
+"auto_backup" = "自动备份";
+"backup_interval" = "备份间隔";
+"backup_location" = "备份位置";
+"cloud_sync" = "云端同步";
+"wifi_only_sync" = "仅WiFi同步";
+"auto_update" = "自动更新";
+"check_update_interval" = "检查更新间隔";
+"cache_settings" = "缓存";
+"cache_size" = "缓存大小";
+"clear_cache" = "清空缓存";
+"cache_cleared" = "缓存已清空";
+"download_settings" = "下载";
+"download_path" = "下载路径";
+"max_concurrent_downloads" = "最大并发下载数";
+"network_settings" = "网络";
+"request_timeout" = "请求超时";
+"retry_count" = "重试次数";
+"user_agent" = "用户代理";
+"privacy_settings" = "隐私";
+"data_collection" = "数据收集";
+"crash_reporting" = "崩溃报告";
+"analytics" = "分析";
+
+// MARK: - 备份与恢复
+"backup_title" = "备份与恢复";
+"create_backup" = "创建备份";
+"restore_backup" = "恢复备份";
+"backup_created" = "备份创建成功";
+"backup_failed" = "备份失败";
+"restore_success" = "恢复成功";
+"restore_failed" = "恢复失败";
+"backup_file" = "备份文件";
+"backup_time" = "备份时间";
+"backup_size" = "备份大小";
+"backup_content" = "备份内容";
+"include_books" = "包含书籍";
+"include_sources" = "包含书源";
+"include_settings" = "包含设置";
+"include_bookmarks" = "包含书签";
+"include_notes" = "包含笔记";
+"backup_encryption" = "备份加密";
+"backup_password" = "备份密码";
+"confirm_password" = "确认密码";
+"password_mismatch" = "密码不匹配";
+"auto_backup_enabled" = "自动备份已启用";
+"auto_backup_disabled" = "自动备份已禁用";
+"backup_interval_daily" = "每日";
+"backup_interval_weekly" = "每周";
+"backup_interval_monthly" = "每月";
+
+// MARK: - 错误信息
+"error_network" = "网络错误";
+"error_timeout" = "请求超时";
+"error_server" = "服务器错误";
+"error_parse" = "解析错误";
+"error_file_not_found" = "文件未找到";
+"error_permission_denied" = "权限不足";
+"error_disk_full" = "磁盘空间不足";
+"error_invalid_url" = "无效的URL";
+"error_invalid_format" = "无效的格式";
+"error_unknown" = "未知错误";
+
+// MARK: - 成功信息
+"success_saved" = "保存成功";
+"success_deleted" = "删除成功";
+"success_imported" = "导入成功";
+"success_exported" = "导出成功";
+"success_synced" = "同步成功";
+"success_updated" = "更新成功";
+"success_book_added" = "书籍添加成功";
+"success_book_deleted" = "书籍删除成功";
+"success_settings_saved" = "设置保存成功";
+"success_data_exported" = "数据导出成功";
+"success_data_imported" = "数据导入成功";
+
+// MARK: - 确认对话框
+"confirm_delete" = "确定要删除吗？";
+"confirm_clear" = "确定要清空吗？";
+"confirm_reset" = "确定要重置吗？";
+"confirm_logout" = "确定要登出吗？";
+"confirm_exit" = "确定要退出吗？";
+
+// MARK: - 时间格式
+"time_just_now" = "刚刚";
+"time_minutes_ago" = "%d分钟前";
+"time_hours_ago" = "%d小时前";
+"time_days_ago" = "%d天前";
+"time_weeks_ago" = "%d周前";
+"time_months_ago" = "%d个月前";
+"time_years_ago" = "%d年前";
+
+// MARK: - 单位
+"unit_bytes" = "字节";
+"unit_kb" = "KB";
+"unit_mb" = "MB";
+"unit_gb" = "GB";
+"unit_seconds" = "秒";
+"unit_minutes" = "分钟";
+"unit_hours" = "小时";
+"unit_days" = "天";
+"unit_weeks" = "周";
+"unit_months" = "月";
+"unit_years" = "年";
