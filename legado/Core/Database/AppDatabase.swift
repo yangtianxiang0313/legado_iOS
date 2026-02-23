@@ -24,6 +24,42 @@ enum AppDatabase {
 
     private static func migrate(_ db: DatabaseQueue) throws {
         var migrator = DatabaseMigrator()
+        migrator.registerMigration("create_books") { db in
+            try db.create(table: Book.databaseTableName) { t in
+                t.primaryKey(["bookUrl"])
+                t.column("bookUrl", .text).notNull()
+                t.column("tocUrl", .text).notNull().defaults(to: "")
+                t.column("origin", .text).notNull().defaults(to: "local")
+                t.column("originName", .text).notNull().defaults(to: "")
+                t.column("name", .text).notNull().defaults(to: "")
+                t.column("author", .text).notNull().defaults(to: "")
+                t.column("kind", .text)
+                t.column("customTag", .text)
+                t.column("coverUrl", .text)
+                t.column("customCoverUrl", .text)
+                t.column("intro", .text)
+                t.column("customIntro", .text)
+                t.column("charset", .text)
+                t.column("type", .integer).notNull().defaults(to: 0)
+                t.column("group", .integer).notNull().defaults(to: 0)
+                t.column("latestChapterTitle", .text)
+                t.column("latestChapterTime", .integer).notNull().defaults(to: 0)
+                t.column("lastCheckTime", .integer).notNull().defaults(to: 0)
+                t.column("lastCheckCount", .integer).notNull().defaults(to: 0)
+                t.column("totalChapterNum", .integer).notNull().defaults(to: 0)
+                t.column("durChapterTitle", .text)
+                t.column("durChapterIndex", .integer).notNull().defaults(to: 0)
+                t.column("durChapterPos", .integer).notNull().defaults(to: 0)
+                t.column("durChapterTime", .integer).notNull().defaults(to: 0)
+                t.column("wordCount", .text)
+                t.column("canUpdate", .boolean).notNull().defaults(to: true)
+                t.column("order", .integer).notNull().defaults(to: 0)
+                t.column("originOrder", .integer).notNull().defaults(to: 0)
+                t.column("variable", .text)
+                t.column("readConfig", .text)
+                t.column("syncTime", .integer).notNull().defaults(to: 0)
+            }
+        }
         migrator.registerMigration("create_book_sources") { db in
             try db.create(table: BookSource.databaseTableName) { t in
                 t.primaryKey(["bookSourceUrl"])
