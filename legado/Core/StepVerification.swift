@@ -18,6 +18,7 @@ enum StepVerification {
         verifyBookCRUD()
         verifyBookSourceImport()
         verifyBookSourceList()
+        verifyRuleParser()
         Task {
             await verifyHttpClient()
             await verifyLegadoURLImport()
@@ -141,6 +142,24 @@ enum StepVerification {
         } catch {
             print("书源管理列表验证失败: \(error)")
         }
+    }
+
+    // MARK: - Step 2.1 验证：规则切分器
+
+    private static func verifyRuleParser() {
+        // "a||b" → ["a","b"]
+        let r1 = RuleParser.splitRule("a||b").map(\.rule)
+        assert(r1 == ["a", "b"], "a||b 应切分为 [a,b]，得到 \(r1)")
+
+        // "a&&b" → ["a","b"]
+        let r2 = RuleParser.splitRule("a&&b").map(\.rule)
+        assert(r2 == ["a", "b"], "a&&b 应切分为 [a,b]，得到 \(r2)")
+
+        // 引号内不切分
+        let r3 = RuleParser.splitRule(#"a||"b||c""#).map(\.rule)
+        assert(r3 == [#"a"#, #""b||c""#], #"引号内 || 不切分，得到 \(r3)"#)
+
+        print("RuleParser 验证通过")
     }
 }
 #endif
