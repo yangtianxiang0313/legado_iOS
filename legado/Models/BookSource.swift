@@ -44,6 +44,51 @@ struct BookSource: Codable, TableRecord, FetchableRecord, MutablePersistableReco
 
     init() {}
 
+    // MARK: - Codable（字段缺失用默认值，兼容导入）
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        bookSourceUrl = try c.decodeIfPresent(String.self, forKey: .bookSourceUrl) ?? ""
+        bookSourceName = try c.decodeIfPresent(String.self, forKey: .bookSourceName) ?? ""
+        bookSourceGroup = try c.decodeIfPresent(String.self, forKey: .bookSourceGroup)
+        bookSourceType = try c.decodeIfPresent(Int.self, forKey: .bookSourceType) ?? 0
+        bookUrlPattern = try c.decodeIfPresent(String.self, forKey: .bookUrlPattern)
+        customOrder = try c.decodeIfPresent(Int.self, forKey: .customOrder) ?? 0
+        enabled = try c.decodeIfPresent(Bool.self, forKey: .enabled) ?? true
+        enabledExplore = try c.decodeIfPresent(Bool.self, forKey: .enabledExplore) ?? true
+        jsLib = try c.decodeIfPresent(String.self, forKey: .jsLib)
+        enabledCookieJar = try c.decodeIfPresent(Bool.self, forKey: .enabledCookieJar)
+        concurrentRate = try c.decodeIfPresent(String.self, forKey: .concurrentRate)
+        header = try c.decodeIfPresent(String.self, forKey: .header)
+        loginUrl = try c.decodeIfPresent(String.self, forKey: .loginUrl)
+        loginUi = try c.decodeIfPresent(String.self, forKey: .loginUi)
+        loginCheckJs = try c.decodeIfPresent(String.self, forKey: .loginCheckJs)
+        coverDecodeJs = try c.decodeIfPresent(String.self, forKey: .coverDecodeJs)
+        bookSourceComment = try c.decodeIfPresent(String.self, forKey: .bookSourceComment)
+        variableComment = try c.decodeIfPresent(String.self, forKey: .variableComment)
+        lastUpdateTime = try c.decodeIfPresent(Int64.self, forKey: .lastUpdateTime) ?? 0
+        respondTime = try c.decodeIfPresent(Int64.self, forKey: .respondTime) ?? 180_000
+        weight = try c.decodeIfPresent(Int.self, forKey: .weight) ?? 0
+        exploreUrl = try c.decodeIfPresent(String.self, forKey: .exploreUrl)
+        exploreScreen = try c.decodeIfPresent(String.self, forKey: .exploreScreen)
+        searchUrl = try c.decodeIfPresent(String.self, forKey: .searchUrl)
+        ruleExplore = try c.decodeIfPresent(ExploreRule.self, forKey: .ruleExplore)
+        ruleSearch = try c.decodeIfPresent(SearchRule.self, forKey: .ruleSearch)
+        ruleBookInfo = try c.decodeIfPresent(BookInfoRule.self, forKey: .ruleBookInfo)
+        ruleToc = try c.decodeIfPresent(TocRule.self, forKey: .ruleToc)
+        ruleContent = try c.decodeIfPresent(ContentRule.self, forKey: .ruleContent)
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case bookSourceUrl, bookSourceName, bookSourceGroup, bookSourceType, bookUrlPattern
+        case customOrder, enabled, enabledExplore, jsLib, enabledCookieJar, concurrentRate
+        case header, loginUrl, loginUi, loginCheckJs, coverDecodeJs
+        case bookSourceComment, variableComment
+        case lastUpdateTime, respondTime, weight
+        case exploreUrl, exploreScreen, searchUrl
+        case ruleExplore, ruleSearch, ruleBookInfo, ruleToc, ruleContent
+    }
+
     // MARK: - GRDB Persistence
 
     private static let jsonEncoder: JSONEncoder = {
