@@ -15,6 +15,8 @@
 		CA0000062E091F1900361CD4 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = CA0000162E091F1900361CD4 /* ZIPFoundation */; };
 		CA0000072E091F1900361CD4 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = CA0000172E091F1900361CD4 /* GRDB */; };
 		CA0000082E091F1900361CD4 /* CocoaLumberjack in Frameworks */ = {isa = PBXBuildFile; productRef = CA0000182E091F1900361CD4 /* CocoaLumberjack */; };
+		CA0000092E091F1900361CD4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA0000192E091F1900361CD4 /* SnapKit */; };
+		CA00000A2E091F1900361CD4 /* LookinServer in Frameworks */ = {isa = PBXBuildFile; productRef = CA00001A2E091F1900361CD4 /* LookinServer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -292,7 +294,7 @@
 				DEVELOPMENT_TEAM = 3YW5DEVKT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -321,7 +323,7 @@
 				DEVELOPMENT_TEAM = 3YW5DEVKT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

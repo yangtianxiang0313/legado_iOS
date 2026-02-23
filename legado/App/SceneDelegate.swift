@@ -19,17 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = PlaceholderViewController()
+        window.rootViewController = MainTabBarController()
         window.makeKeyAndVisible()
         self.window = window
     }
 }
 
-// MARK: - 占位 VC（Step 0.3 将由 MainTabBarController 替换）
-
-private final class PlaceholderViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-    }
-}
