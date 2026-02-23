@@ -36,23 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     #if DEBUG
     private static func verifyBookSourceCRUD() {
+        let repo = BookSourceRepository()
         var source = BookSource()
         source.bookSourceUrl = "https://example.com"
         source.bookSourceName = "测试书源"
         do {
-            try AppDatabase.shared.write { db in
-                try source.save(db)
-            }
-            let fetched = try? AppDatabase.shared.read { db in
-                try BookSource.fetchOne(db, key: "https://example.com")
-            }
-            assert(fetched?.bookSourceName == "测试书源", "BookSource 插入/查询验证失败")
-            // 验证后删除测试数据
-            try? AppDatabase.shared.write { db in
-                _ = try BookSource.deleteOne(db, key: "https://example.com")
-            }
+            try repo.insert(source)
+            let fetched = try? repo.get(bookSourceUrl: "https://example.com")
+            assert(fetched?.bookSourceName == "测试书源", "BookSourceRepository 插入/查询验证失败")
+            try? repo.delete(bookSourceUrl: "https://example.com")
         } catch {
-            print("BookSource 验证失败: \(error)")
+            print("BookSourceRepository 验证失败: \(error)")
         }
     }
 
