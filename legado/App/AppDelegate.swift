@@ -31,4 +31,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         return true
     }
+
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey: Any] = [:]
+    ) -> Bool {
+        guard url.scheme == "legado" else { return false }
+        Task {
+            let service = LegadoURLImportService()
+            let result = await service.handle(url: url)
+            await MainActor.run {
+                handleImportResult(result)
+            }
+        }
+        return true
+    }
+
+    private func handleImportResult(_ result: LegadoImportResult) {
+        switch result {
+        case .success(let count, let path):
+            showAlert(title: "导入成功", message: "已导入 \(count) 个\(path == "bookSource" ? "书源" : path)")
+        case .unsupportedPath(let path):
+            showAlert(title: "不支持", message: "暂不支持 path: \(path)")
+        case .missingSrc:
+            showAlert(title: "参数错误", message: "缺少 src 参数")
+        case .failed(let error):
+            showAlert(title: "导入失败", message: error.localizedDescription)
+        }
+    }
+
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "确定", style: .default))
+        window?.rootViewController?.present(alert, animated: true)
+    }
 }

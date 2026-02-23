@@ -17,7 +17,10 @@ enum StepVerification {
         verifyBookSourceCRUD()
         verifyBookCRUD()
         verifyBookSourceImport()
-        Task { await verifyHttpClient() }
+        Task {
+            await verifyHttpClient()
+            await verifyLegadoURLImport()
+        }
     }
 
     // MARK: - Step 1.1 验证：BookSource CRUD
@@ -98,6 +101,23 @@ enum StepVerification {
         } catch {
             print("HttpClient 验证失败: \(error)")
         }
+    }
+
+    // MARK: - Step 1.6 验证：legado:// URL Scheme 解析
+
+    private static func verifyLegadoURLImport() async {
+        let service = LegadoURLImportService()
+        // 缺少 src
+        let noSrc = URL(string: "legado://import/bookSource")!
+        let r1 = await service.handle(url: noSrc)
+        if case .missingSrc = r1 { } else { assert(false, "缺少 src 应返回 missingSrc") }
+
+        // 不支持的 path
+        let unsupported = URL(string: "legado://import/other?src=https://example.com")!
+        let r2 = await service.handle(url: unsupported)
+        if case .unsupportedPath = r2 { } else { assert(false, "不支持的 path 应返回 unsupportedPath") }
+
+        print("Legado URL 导入解析验证通过")
     }
 }
 #endif
