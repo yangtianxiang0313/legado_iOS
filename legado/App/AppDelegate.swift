@@ -17,11 +17,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        do {
+            try AppDatabase.setup()
+        } catch {
+            fatalError("数据库初始化失败: \(error)")
+        }
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = MainTabBarController()
         window.makeKeyAndVisible()
         self.window = window
-        // 主题 / 外观、GRDB、JS 桥接等初始化在后续 Step 完成
+        // Step 1.1 验证：插入并查询 BookSource（验证通过后删除）
+        #if DEBUG
+        Self.verifyBookSourceCRUD()
+        #endif
         return true
     }
+
+    #if DEBUG
+    private static func verifyBookSourceCRUD() {
+        var source = BookSource()
+        source.bookSourceUrl = "https://example.com"
+        source.bookSourceName = "测试书源"
+        do {
+            try AppDatabase.shared.write { db in
+                try source.save(db)
+            }
+            let fetched = try? AppDatabase.shared.read { db in
+                try BookSource.fetchOne(db, key: "https://example.com")
+            }
+            assert(fetched?.bookSourceName == "测试书源", "BookSource 插入/查询验证失败")
+            // 验证后删除测试数据
+            try? AppDatabase.shared.write { db in
+                _ = try BookSource.deleteOne(db, key: "https://example.com")
+            }
+        } catch {
+            print("BookSource 验证失败: \(error)")
+        }
+    }
+    #endif
 }
