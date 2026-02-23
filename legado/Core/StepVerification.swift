@@ -17,6 +17,7 @@ enum StepVerification {
         verifyBookSourceCRUD()
         verifyBookCRUD()
         verifyBookSourceImport()
+        verifyBookSourceList()
         Task {
             await verifyHttpClient()
             await verifyLegadoURLImport()
@@ -118,6 +119,28 @@ enum StepVerification {
         if case .unsupportedPath = r2 { } else { assert(false, "不支持的 path 应返回 unsupportedPath") }
 
         print("Legado URL 导入解析验证通过")
+    }
+
+    // MARK: - Step 1.7 验证：书源管理列表
+
+    private static func verifyBookSourceList() {
+        let repo = BookSourceRepository()
+        do {
+            var count = try repo.count()
+            // 若无书源则插入一条演示数据，便于验证列表展示
+            if count == 0 {
+                var demo = BookSource()
+                demo.bookSourceUrl = "https://step17-demo.legado"
+                demo.bookSourceName = "演示书源（Step 1.7 验证）"
+                try repo.insert(demo)
+                count = 1
+            }
+            let all = try repo.all()
+            assert(all.count == count, "BookSourceRepository.all 应与 count 一致")
+            print("书源管理列表验证通过，当前书源数: \(count)")
+        } catch {
+            print("书源管理列表验证失败: \(error)")
+        }
     }
 }
 #endif
