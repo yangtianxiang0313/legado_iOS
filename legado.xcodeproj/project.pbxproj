@@ -17,14 +17,30 @@
 		CA0000082E091F1900361CD4 /* CocoaLumberjack in Frameworks */ = {isa = PBXBuildFile; productRef = CA0000182E091F1900361CD4 /* CocoaLumberjack */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		T00001E2E091F1900361CD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96987AA72E091F1900361CD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96987AAE2E091F1900361CD4;
+			remoteInfo = legado;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		96987AAF2E091F1900361CD4 /* legado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = legado.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		T00001C2E091F1900361CD4 /* legadoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = legadoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		96987AB12E091F1900361CD4 /* legado */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = legado;
+			sourceTree = "<group>";
+		};
+		T00001D2E091F1900361CD4 /* legadoTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = legadoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,6 +61,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		T00001F2E091F1900361CD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -52,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				96987AB12E091F1900361CD4 /* legado */,
+				T00001D2E091F1900361CD4 /* legadoTests */,
 				96987AB02E091F1900361CD4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				96987AAF2E091F1900361CD4 /* legado.app */,
+				T00001C2E091F1900361CD4 /* legadoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +122,27 @@
 			productReference = 96987AAF2E091F1900361CD4 /* legado.app */;
 			productType = "com.apple.product-type.application";
 		};
+		T0000202E091F1900361CD4 /* legadoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = T0000212E091F1900361CD4 /* Build configuration list for PBXNativeTarget "legadoTests" */;
+			buildPhases = (
+				T0000222E091F1900361CD4 /* Sources */,
+				T00001F2E091F1900361CD4 /* Frameworks */,
+				T0000232E091F1900361CD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				T0000242E091F1900361CD4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				T00001D2E091F1900361CD4 /* legadoTests */,
+			);
+			name = legadoTests;
+			productName = legadoTests;
+			productReference = T00001C2E091F1900361CD4 /* legadoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -108,6 +154,9 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					96987AAE2E091F1900361CD4 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					T0000202E091F1900361CD4 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -137,12 +186,20 @@
 			projectRoot = "";
 			targets = (
 				96987AAE2E091F1900361CD4 /* legado */,
+				T0000202E091F1900361CD4 /* legadoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		96987AAD2E091F1900361CD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		T0000232E091F1900361CD4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -159,7 +216,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		T0000222E091F1900361CD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		T0000242E091F1900361CD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96987AAE2E091F1900361CD4 /* legado */;
+			targetProxy = T00001E2E091F1900361CD4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		96987ABB2E091F1B00361CD4 /* Debug */ = {
@@ -341,6 +413,54 @@
 			};
 			name = Release;
 		};
+		T0000252E091F1900361CD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3YW5DEVKT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = txy.legado.legadoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/legado.app/legado";
+			};
+			name = Debug;
+		};
+		T0000262E091F1900361CD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3YW5DEVKT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = txy.legado.legadoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/legado.app/legado";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -358,6 +478,15 @@
 			buildConfigurations = (
 				96987ABE2E091F1B00361CD4 /* Debug */,
 				96987ABF2E091F1B00361CD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		T0000212E091F1900361CD4 /* Build configuration list for PBXNativeTarget "legadoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				T0000252E091F1900361CD4 /* Debug */,
+				T0000262E091F1900361CD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

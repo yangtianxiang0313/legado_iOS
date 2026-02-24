@@ -96,4 +96,18 @@ enum AppDatabase {
         }
         try migrator.migrate(db)
     }
+
+    /// 供 XCTest 使用的测试库，与真实数据隔离，全用例公用一个
+    private static var testDBInitialized = false
+
+    static func setupForTesting() throws {
+        if testDBInitialized { return }
+        let testDir = FileManager.default.temporaryDirectory
+            .appendingPathComponent("legado_test", isDirectory: true)
+        try FileManager.default.createDirectory(at: testDir, withIntermediateDirectories: true)
+        let dbPath = testDir.appendingPathComponent("legado.sqlite").path
+        shared = try DatabaseQueue(path: dbPath)
+        try migrate(shared)
+        testDBInitialized = true
+    }
 }

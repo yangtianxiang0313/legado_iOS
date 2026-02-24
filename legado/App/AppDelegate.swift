@@ -26,9 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = MainTabBarController()
         window.makeKeyAndVisible()
         self.window = window
-        #if DEBUG
-        StepVerification.runAll()
-        #endif
         return true
     }
 
@@ -64,6 +61,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "确定", style: .default))
-        window?.rootViewController?.present(alert, animated: true)
+        let window = UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first { $0.isKeyWindow }
+            ?? UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap { $0.windows }
+                .first
+        guard let rootVC = window?.rootViewController else { return }
+        rootVC.present(alert, animated: true)
     }
 }
