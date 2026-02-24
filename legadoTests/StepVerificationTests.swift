@@ -196,4 +196,13 @@ final class StepVerificationTests: XCTestCase {
         XCTAssertNotNil(r2)
         XCTAssertFalse(r2?.contains("  ") ?? true, "净化后不应含连续空格")
     }
+
+    // MARK: - Step 2.4 JSONPath 解析器（Sextant）
+
+    func testStep2_4_SextantAnalyzer() throws {
+        let json = #"{"data":{"name":"书"}}"#
+        let path = "$.data.name"
+        let result = SextantAnalyzer.evaluate(json: json, path: path)
+        XCTAssertEqual(result, "书", "JSON + $.data.name 应得到「书」")
+    }
 }
