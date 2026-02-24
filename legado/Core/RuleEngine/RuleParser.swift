@@ -29,12 +29,12 @@ enum RuleParser {
             .filter { !$0.rule.isEmpty }
     }
 
-    /// 修剪开头的 @ 或空白
+    /// 修剪开头的空白（不修剪 @，以免破坏 @css:、@Json: 等前缀）
     private static func trimStart(_ s: String) -> String {
         var i = s.startIndex
         while i < s.endIndex {
             let c = s[i]
-            if c == "@" || c.isWhitespace || c < "!" {
+            if c.isWhitespace || c < "!" {
                 i = s.index(after: i)
             } else {
                 break

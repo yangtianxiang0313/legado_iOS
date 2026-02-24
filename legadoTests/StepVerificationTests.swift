@@ -205,4 +205,22 @@ final class StepVerificationTests: XCTestCase {
         let result = SextantAnalyzer.evaluate(json: json, path: path)
         XCTAssertEqual(result, "书", "JSON + $.data.name 应得到「书」")
     }
+
+    // MARK: - Step 2.5 AnalyzeRule 主入口
+
+    func testStep2_5_AnalyzeRule() throws {
+        // HTML + CSS 规则
+        let html = #"<div class='x'><a href='/a'>链接</a></div>"#
+        let r1 = AnalyzeRule.getString(content: html, rule: "@css:.x a@text")
+        XCTAssertEqual(r1, "链接", "HTML + @css 应得「链接」")
+
+        // JSON + $. 规则
+        let json = #"{"data":{"name":"书"}}"#
+        let r2 = AnalyzeRule.getString(content: json, rule: "$.data.name")
+        XCTAssertEqual(r2, "书", "JSON + $. 应得「书」")
+
+        // || 链取第一个非空（$.missing 对 HTML 无效，取 @css）
+        let r3 = AnalyzeRule.getString(content: html, rule: "@css:.none||@css:.x a@text")
+        XCTAssertEqual(r3, "链接", "|| 应取第一个有值")
+    }
 }
