@@ -60,6 +60,50 @@ enum AppDatabase {
                 t.column("syncTime", .integer).notNull().defaults(to: 0)
             }
         }
+        migrator.registerMigration("create_book_groups") { db in
+            try db.create(table: BookGroup.databaseTableName) { t in
+                t.primaryKey(["groupId"])
+                t.column("groupId", .integer).notNull()
+                t.column("groupName", .text).notNull().defaults(to: "")
+                t.column("cover", .text)
+                t.column("order", .integer).notNull().defaults(to: 0)
+                t.column("enableRefresh", .boolean).notNull().defaults(to: true)
+                t.column("show", .boolean).notNull().defaults(to: true)
+                t.column("bookSort", .integer).notNull().defaults(to: -1)
+            }
+        }
+        migrator.registerMigration("create_replace_rules") { db in
+            try db.create(table: ReplaceRule.databaseTableName) { t in
+                t.autoIncrementedPrimaryKey("id")
+                t.column("name", .text).notNull().defaults(to: "")
+                t.column("group", .text)
+                t.column("pattern", .text).notNull().defaults(to: "")
+                t.column("replacement", .text).notNull().defaults(to: "")
+                t.column("scope", .text)
+                t.column("scopeTitle", .boolean).notNull().defaults(to: false)
+                t.column("scopeContent", .boolean).notNull().defaults(to: true)
+                t.column("excludeScope", .text)
+                t.column("isEnabled", .boolean).notNull().defaults(to: true)
+                t.column("isRegex", .boolean).notNull().defaults(to: true)
+                t.column("timeoutMillisecond", .integer).notNull().defaults(to: 3000)
+                t.column("sortOrder", .integer).notNull().defaults(to: 0)
+            }
+        }
+        migrator.registerMigration("create_search_keywords") { db in
+            try db.create(table: SearchKeyword.databaseTableName) { t in
+                t.primaryKey(["word"])
+                t.column("word", .text).notNull()
+                t.column("usage", .integer).notNull().defaults(to: 1)
+                t.column("lastUseTime", .integer).notNull().defaults(to: 0)
+            }
+        }
+        migrator.registerMigration("create_cookies") { db in
+            try db.create(table: Cookie.databaseTableName) { t in
+                t.primaryKey(["url"])
+                t.column("url", .text).notNull()
+                t.column("cookie", .text).notNull().defaults(to: "")
+            }
+        }
         migrator.registerMigration("create_book_sources") { db in
             try db.create(table: BookSource.databaseTableName) { t in
                 t.primaryKey(["bookSourceUrl"])

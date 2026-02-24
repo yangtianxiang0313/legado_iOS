@@ -15,6 +15,7 @@
 		CA0000062E091F1900361CD4 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = CA0000162E091F1900361CD4 /* ZIPFoundation */; };
 		CA0000072E091F1900361CD4 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = CA0000172E091F1900361CD4 /* GRDB */; };
 		CA0000082E091F1900361CD4 /* CocoaLumberjack in Frameworks */ = {isa = PBXBuildFile; productRef = CA0000182E091F1900361CD4 /* CocoaLumberjack */; };
+		CA0000092E091F1900361CD4 /* CocoaLumberjackSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA0000192E091F1900361CD4 /* CocoaLumberjackSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 				CA0000062E091F1900361CD4 /* ZIPFoundation in Frameworks */,
 				CA0000072E091F1900361CD4 /* GRDB in Frameworks */,
 				CA0000082E091F1900361CD4 /* CocoaLumberjack in Frameworks */,
+				CA0000092E091F1900361CD4 /* CocoaLumberjackSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +119,7 @@
 				CA0000162E091F1900361CD4 /* ZIPFoundation */,
 				CA0000172E091F1900361CD4 /* GRDB */,
 				CA0000182E091F1900361CD4 /* CocoaLumberjack */,
+				CA0000192E091F1900361CD4 /* CocoaLumberjackSwift */,
 			);
 			productName = legado;
 			productReference = 96987AAF2E091F1900361CD4 /* legado.app */;
@@ -600,6 +603,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CA0000282E091F1900361CD4 /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
 			productName = CocoaLumberjack;
+		};
+		CA0000192E091F1900361CD4 /* CocoaLumberjackSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA0000282E091F1900361CD4 /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjackSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

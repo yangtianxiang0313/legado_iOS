@@ -20,6 +20,14 @@ final class StepVerificationTests: XCTestCase {
         super.tearDown()
     }
 
+    // MARK: - Step 0.4 日志初始化
+
+    func testStep0_4_LogConfig() throws {
+        LogConfig.setup()
+        LogConfig.logTestMessage()
+        // 调用日志 API 无崩溃即通过；控制台可见输出
+    }
+
     // MARK: - Step 1.1 BookSource CRUD
 
     func testStep1_1_BookSourceCRUD() throws {
@@ -128,6 +136,81 @@ final class StepVerificationTests: XCTestCase {
 
     // MARK: - Step 1.7 书源管理列表
 
+    // MARK: - Step 1.8 BookGroup
+
+    func testStep1_8_BookGroup() throws {
+        let repo = BookGroupRepository()
+        var group = BookGroup()
+        group.groupId = 100
+        group.groupName = "自定义分组"
+
+        try repo.insert(group)
+        let fetched = try repo.get(groupId: 100)
+        XCTAssertEqual(fetched?.groupName, "自定义分组")
+
+        let all = try repo.all()
+        XCTAssertTrue(all.contains { $0.groupId == 100 })
+
+        try repo.delete(groupId: 100)
+    }
+
+    // MARK: - Step 1.9 ReplaceRule
+
+    func testStep1_9_ReplaceRule() throws {
+        let repo = ReplaceRuleRepository()
+        var rule = ReplaceRule()
+        rule.name = "测试规则"
+        rule.pattern = "广告"
+        rule.replacement = ""
+        rule.isEnabled = true
+
+        try repo.insert(&rule)
+        XCTAssertTrue(rule.id > 0)
+
+        let all = try repo.all()
+        XCTAssertEqual(all.count, 1)
+        XCTAssertEqual(all[0].name, "测试规则")
+
+        var fetched = try repo.get(id: rule.id)!
+        fetched.isEnabled = false
+        try repo.update(fetched)
+
+        let enabled = try repo.enabled()
+        XCTAssertTrue(enabled.isEmpty || !enabled.contains { $0.id == rule.id })
+
+        try repo.delete(id: rule.id)
+    }
+
+    // MARK: - Step 1.10 SearchKeyword
+
+    func testStep1_10_SearchKeyword() throws {
+        let repo = SearchKeywordRepository()
+        try repo.insertOrUpdate(word: "测试")
+        try repo.insertOrUpdate(word: "测试")  // usage 应增加
+
+        let byUsage = try repo.allByUsage()
+        XCTAssertTrue(byUsage.contains { $0.word == "测试" })
+        XCTAssertEqual(byUsage.first { $0.word == "测试" }?.usage, 2)
+
+        try repo.delete(word: "测试")
+        XCTAssertNil(try repo.get(word: "测试"))
+    }
+
+    // MARK: - Step 1.11 Cookie
+
+    func testStep1_11_Cookie() throws {
+        let repo = CookieRepository()
+        let cookie = Cookie(url: "https://example.com", cookie: "session=abc123")
+
+        try repo.insert(cookie)
+        let fetched = try repo.get(url: "https://example.com")
+        XCTAssertEqual(fetched?.cookie, "session=abc123")
+
+        try repo.delete(url: "https://example.com")
+    }
+
+    // MARK: - Step 1.7 书源管理列表
+
     func testStep1_7_BookSourceList() throws {
         let repo = BookSourceRepository()
         var count = try repo.count()
@@ -222,5 +305,62 @@ final class StepVerificationTests: XCTestCase {
         // || 链取第一个非空（$.missing 对 HTML 无效，取 @css）
         let r3 = AnalyzeRule.getString(content: html, rule: "@css:.none||@css:.x a@text")
         XCTAssertEqual(r3, "链接", "|| 应取第一个有值")
+    }
+
+    // MARK: - Step 2.6 HTTP 请求 + 规则解析（单书源搜索）
+
+    func testStep2_6_AnalyzeRuleGetElements() throws {
+        // HTML bookList
+        let html = """
+        <div class="book"><a href="/book/1">书一</a><span class="author">作者A</span></div>
+        <div class="book"><a href="/book/2">书二</a><span class="author">作者B</span></div>
+        """
+        let elements = AnalyzeRule.getElements(content: html, rule: "@css:.book")
+        XCTAssertEqual(elements.count, 2, "bookList 应得 2 个元素")
+        let name1 = AnalyzeRule.getString(content: elements[0], rule: "@css:a@text")
+        XCTAssertEqual(name1, "书一")
+        let author1 = AnalyzeRule.getString(content: elements[0], rule: "@css:.author@text")
+        XCTAssertEqual(author1, "作者A")
+
+        // JSON bookList
+        let json = #"{"data":{"books":[{"name":"书A","author":"作者甲"},{"name":"书B","author":"作者乙"}]}}"#
+        let jsonElements = AnalyzeRule.getElements(content: json, rule: "$.data.books")
+        XCTAssertEqual(jsonElements.count, 2, "JSON bookList 应得 2 个元素")
+        let jName = AnalyzeRule.getString(content: jsonElements[0], rule: "$.name")
+        XCTAssertEqual(jName, "书A")
+    }
+
+    func testStep2_6_WebBookServiceSearchBook() async throws {
+        let html = """
+        <html><body>
+        <div class="book-item">
+            <a class="title" href="/book/abc">三体</a>
+            <span class="author">刘慈欣</span>
+        </div>
+        </body></html>
+        """
+        var source = BookSource()
+        source.bookSourceUrl = "https://search-test.legado"
+        source.bookSourceName = "搜索测试"
+        source.searchUrl = "https://search-test.legado/search"
+        source.ruleSearch = SearchRule(
+            bookList: "@css:.book-item",
+            name: "@css:.title@text",
+            author: "@css:.author@text",
+            bookUrl: "@css:.title@href"
+        )
+
+        let results = try await WebBookService.searchBook(
+            bookSource: source,
+            key: "三体",
+            page: 1,
+            bodyOverride: html
+        )
+
+        XCTAssertFalse(results.isEmpty, "选一有效书源+关键词，应返回非空 [SearchBook]")
+        XCTAssertEqual(results[0].name, "三体")
+        XCTAssertEqual(results[0].author, "刘慈欣")
+        XCTAssertTrue(results[0].bookUrl.contains("abc") || results[0].bookUrl.hasSuffix("/book/abc"))
+        XCTAssertEqual(results[0].origin, "https://search-test.legado")
     }
 }
